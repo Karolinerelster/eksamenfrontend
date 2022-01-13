@@ -1,0 +1,35 @@
+@import "./../abstracts/variables";
+
+header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  padding: 2rem 2rem;
+  z-index: 5;
+  // background-image: linear-gradient($primary-color 95%, transparent 100%);
+  background-color: transparent;
+
+  > * {
+    position: relative;
+    display: grid;
+    cursor: pointer;
+
+    img {
+      width: 4rem;
+    }
+
+    &.icon-cart-container {
+      img {
+        place-self: center;
+      }
+
+      .icon-cart-length {
+        position: absolute;
+        font-family: $header-font;
+        font-weight: $bold;
+        place-self: center;
+      }
+    }
+  }
+}

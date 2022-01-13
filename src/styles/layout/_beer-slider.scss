@@ -1,0 +1,192 @@
+@import "./../abstracts/variables";
+
+#modal-slider {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: $primary-color;
+  transition-duration: 0.3s;
+
+  .slick-slider {
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+
+    .slick-dots {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 1rem;
+      margin: 0;
+      padding: 0;
+      display: flex !important;
+      grid-gap: 0.5rem;
+      margin-bottom: 0.8rem;
+
+      li {
+        position: relative;
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+
+        button {
+          font-family: "system-ui";
+          font-size: 0;
+          color: transparent;
+          background-color: transparent;
+          margin: 0;
+          padding: 0.5rem;
+          border: none;
+        }
+
+        button:before {
+          content: " ";
+          position: absolute;
+          background-color: $secondary-color;
+          border-radius: 2rem;
+          height: 1rem;
+          width: 1rem;
+          left: 0;
+          top: 0;
+          transition-duration: 0.3s;
+        }
+      }
+
+      li.slick-active {
+        button:before {
+          transform: scale(1.1);
+          background-color: $font-color;
+          transition-duration: 0.3s;
+        }
+      }
+    }
+
+    .slick-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      margin: 1rem;
+      width: 1rem;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .slick-prev {
+      left: 0.5rem;
+    }
+
+    .slick-next {
+      right: 0.5rem;
+    }
+
+    .slick-list {
+      overflow: hidden;
+      padding-top: 7rem;
+      height: 100%;
+
+      .slick-track {
+        height: 100%;
+
+        .slick-slide {
+          float: left;
+          height: 100%;
+
+          > * {
+            height: 100%;
+          }
+
+          .beer-slide {
+            padding: 3rem 5rem 8.5rem;
+            height: 100%;
+            width: 100%;
+
+            .beer-slide-top {
+              display: flex;
+              flex-direction: column;
+              height: 100%;
+
+              .beer-slide-top-display {
+                grid-gap: 1rem;
+                display: flex;
+                justify-items: center;
+                justify-content: space-evenly;
+
+                img {
+                  width: 30%;
+                }
+
+                .beer-slide-header {
+                  text-align: center;
+                  place-self: center;
+
+                  .beer-slide-name {
+                    font-family: $header-font;
+                    font-weight: $black;
+                    font-size: 1.5rem;
+                    text-transform: uppercase;
+                    margin: 0 0 0.3rem 0;
+                  }
+
+                  .beer-slide-alc {
+                    font-family: $body-font;
+                    font-weight: $regular;
+                    font-size: 1.3rem;
+                    margin: 0 0 0.7rem 0;
+                  }
+
+                  .beer-slide-price {
+                    font-family: $header-font;
+                    font-weight: $black;
+                    margin: 0 0 0.7rem 0;
+                  }
+
+                  .button-amount {
+                    width: 8rem;
+                    margin: 0 auto;
+                  }
+                }
+              }
+
+              .beer-slide-top-description-container {
+                margin-block: 2rem;
+                overflow-y: auto;
+
+                .beer-slide-top-description {
+                  > * {
+                    margin-block: 1rem;
+                  }
+                }
+              }
+            }
+
+            .beer-slide-bottom {
+              position: sticky;
+              width: 100%;
+
+              .beer-slide-bottom-buttons {
+                display: flex;
+                grid-template-columns: auto 1fr;
+                grid-gap: 1rem;
+                justify-content: space-between;
+
+                button {
+                  padding: 1rem 1.5rem;
+                  margin: 0;
+                  font-size: 1.2rem;
+
+                  img {
+                    width: 2rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@import "./../abstracts/variables";
+
+.basket-tips {
+  .tips-selector {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+
+    .tip-box {
+      display: inline-block;
+
+      label {
+        display: inline-flex;
+        padding: 0.5rem 1rem;
+        border: 1px solid transparent;
+        border-radius: 2rem;
+        cursor: pointer;
+        transition-duration: 0.3s;
+        background-color: $secondary-color;
+
+        p {
+          font-size: 1.2rem;
+          margin: 0;
+          padding: 0.5rem;
+          transition-duration: 0.3s;
+        }
+      }
+
+      input {
+        appearance: none;
+        margin: 0;
+      }
+
+      input:checked + label {
+        background-color: $font-color;
+        color: $primary-color;
+
+        p {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,137 @@
+@import "./../abstracts/variables";
+
+#modal-basket {
+  position: fixed;
+  width: 100%;
+  min-height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: $primary-color;
+  transition-duration: 0.3s;
+
+  .basket-inner {
+    padding: 9rem 5rem 5rem;
+
+    hr {
+      border: none;
+      height: 2px;
+      background-color: $primary-light;
+      margin-block: 1rem;
+    }
+
+    .basket-item {
+      .basket-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        grid-gap: 1rem;
+
+        .basket-item-left {
+          display: flex;
+          grid-gap: 1rem;
+
+          .basket-item-image {
+            display: flex;
+            width: 5rem;
+            height: 5rem;
+
+            img {
+              height: 100%;
+              width: auto;
+              margin: 0 auto;
+            }
+          }
+
+          .basket-item-header {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            grid-gap: 0.3rem;
+            place-self: center;
+
+            .basket-item-name {
+              font-family: $header-font;
+              font-weight: $black;
+              font-size: 1.3rem;
+              text-transform: uppercase;
+              margin: 0;
+            }
+
+            .basket-item-type {
+              font-family: $body-font;
+              font-weight: $regular;
+              font-size: 0.8rem;
+              margin: 0;
+            }
+
+            .basket-item-alc {
+              font-family: $body-font;
+              font-weight: $regular;
+              font-size: 0.8rem;
+              text-transform: uppercase;
+              margin: 0;
+            }
+          }
+        }
+
+        .basket-item-right {
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .basket-bottom {
+        margin-top: 1rem;
+
+        .button-amount {
+          min-width: 10rem;
+          padding: 0;
+          margin: 0 auto;
+          text-align: center;
+        }
+      }
+    }
+
+    .basket-checkout {
+      .basket-total {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        h4 {
+          line-height: 2rem;
+        }
+      }
+
+      button {
+        background-color: $secondary-color;
+        color: $primary-color;
+        width: 100%;
+        background-color: #383838;
+        color: $font-color;
+        animation: pulse 1.5s infinite;
+        padding: 1rem 1.5rem;
+        margin: 0;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+
+        @keyframes pulse {
+          0% {
+            transform: scale(1);
+          }
+          70% {
+            transform: scale(1.1);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+
+        &.proceed-locked {
+          filter: brightness(0.8);
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}

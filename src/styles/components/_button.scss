@@ -1,0 +1,79 @@
+@import "./../abstracts/variables";
+
+button {
+  font-family: $header-font;
+  font-weight: $bold;
+  color: $font-color;
+  background-color: #383838;
+  border: 2px solid #383838;
+  border-radius: 2rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  text-transform: uppercase;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 1rem;
+}
+
+.button-container .info {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.button-fill {
+  background-color: #383838;
+  color: $font-color;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+  }
+  70% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+button:not(.button-sold-out):active {
+  color: $primary-color;
+  background-color: $secondary-color;
+  transition-duration: 0.3s;
+}
+
+.button-amount {
+  display: flex;
+  padding: 0;
+
+  > * {
+    font-size: 1.3rem;
+    flex: 1;
+    padding: 0.75rem;
+  }
+}
+
+.button-sold-out {
+  filter: brightness(0.6);
+  font-size: 1.2rem;
+  cursor: auto;
+}

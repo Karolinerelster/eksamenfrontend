@@ -1,0 +1,13 @@
+@import "./styles/abstracts";
+@import "./styles/base";
+@import "./styles/components";
+@import "./styles/layout";
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
